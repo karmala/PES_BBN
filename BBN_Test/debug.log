@@ -1371,3 +1371,31 @@ Caused by: java.lang.NullPointerException
 	at bbn.AgentSpace.bBNstep(AgentSpace.java:58)
 	at bbn.Model.initialStep(Model.java:61)
 	... 9 more
+FATAL [Thread-2] 2020-03-31 13:24:18,576 repast.simphony.ui.GUIScheduleRunner - RunTimeException when running the schedule
+Current tick (0.0)
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at repast.simphony.engine.schedule.CallBackAction.execute(CallBackAction.java:129)
+	at repast.simphony.engine.schedule.DefaultAction.execute(DefaultAction.java:38)
+	at repast.simphony.engine.schedule.ScheduleGroup.executeList(ScheduleGroup.java:205)
+	at repast.simphony.engine.schedule.ScheduleGroup.execute(ScheduleGroup.java:231)
+	at repast.simphony.engine.schedule.Schedule.execute(Schedule.java:352)
+	at repast.simphony.ui.GUIScheduleRunner$ScheduleLoopRunnable.run(GUIScheduleRunner.java:52)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at bbn.Model$$FastClassByCGLIB$$94431949.invoke(<generated>)
+	at net.sf.cglib.reflect.FastMethod.invoke(FastMethod.java:53)
+	at repast.simphony.engine.schedule.CallBackAction.execute(CallBackAction.java:127)
+	... 6 more
+Caused by: java.lang.UnsatisfiedLinkError: no NeticaJ in java.library.path: [C:\NeticaJ_Win\NeticaJ_504\bin\x64_bin]
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2660)
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:829)
+	at java.base/java.lang.System.loadLibrary(System.java:1867)
+	at norsys.netica.NETICA.<clinit>(NETICA.java:488)
+	at norsys.netica.Environ.<init>(Environ.java:111)
+	at bbn.BBNBuilder.<init>(BBNBuilder.java:31)
+	at bbn.BBNBuilder.getInstance(BBNBuilder.java:51)
+	at bbn.BBNDecision.<init>(BBNDecision.java:12)
+	at bbn.BBNDecisionImpl.<init>(BBNDecisionImpl.java:12)
+	at bbn.AgentSpace.ini(AgentSpace.java:37)
+	at bbn.Model.initialStep(Model.java:59)
+	... 9 more
